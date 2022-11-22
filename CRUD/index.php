@@ -101,7 +101,7 @@ require_once("../CRUD/php/operations.php");
                             <td>109.85</td>
                             <td><i class="fas fa-edit btnedit"></i></td>
                         </tr>
-                        <tr>
+                        <!-- <tr>
                             <td>2</td>
                             <td>c++ book</td>
                             <td>Complexo</td>
@@ -128,7 +128,7 @@ require_once("../CRUD/php/operations.php");
                             <td>Complexo</td>
                             <td>109.85</td>
                             <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
