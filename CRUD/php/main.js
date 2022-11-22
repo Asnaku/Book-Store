@@ -1,6 +1,6 @@
 $(".btnedit").click(e=>{
     displayData();
-        //console.log("icon clicked..!");
+    //console.log("icon clicked..!");
 });
 
 
