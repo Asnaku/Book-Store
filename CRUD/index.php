@@ -51,7 +51,7 @@ require_once("../CRUD/php/operations.php");
                         <div class="col">
                             <div class="input-group mb-3">
                                 <span class="input-group-text bg-warning"><i class="fa-solid fa-book"></i></span>
-                                <input type="text" autocomplete="off" placeholder="Book Name" class="form-control" placeholder="book_name" aria-label="book_name">
+                                <input type="text" autocomplete="off" placeholder="Book Name" class="form-control" placeholder="book_name" name="book_name" id="book_name" aria-label="book_name">
                             </div>
                         </div>
                     </div>
@@ -60,13 +60,13 @@ require_once("../CRUD/php/operations.php");
                         <div class="col">
                             <div class="input-group mb-3">
                                 <span class="input-group-text bg-warning"><i class="fas fa-people-carry"></i></span>
-                                <input type="text" autocomplete="off" placeholder="Publisher" class="form-control" placeholder="book_publisher" aria-label="book_publisher">
+                                <input type="text" name="book_publisher" id="book_publisher" autocomplete="off" placeholder="Publisher" class="form-control" placeholder="book_publisher" aria-label="book_publisher">
                             </div>
                         </div>
                         <div class="col">
                             <div class="input-group mb-3">
                                 <span class="input-group-text bg-warning"><i class="fas fa-dollar-sign"></i></span>
-                                <input type="text" autocomplete="off" placeholder="Price" class="form-control" placeholder="book_price" aria-label="book_price">
+                                <input type="text" autocomplete="off" placeholder="Price" class="form-control" placeholder="book_price" id="book_price" name="book_price" aria-label="book_price">
                             </div>
                         </div>
                     </div>
@@ -97,6 +97,34 @@ require_once("../CRUD/php/operations.php");
                         <tr>
                             <td>1</td>
                             <td>php book</td>
+                            <td>Complexo</td>
+                            <td>109.85</td>
+                            <td><i class="fas fa-edit btnedit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>c++ book</td>
+                            <td>Complexo</td>
+                            <td>119.85</td>
+                            <td><i class="fas fa-edit btnedit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>java book</td>
+                            <td>Complexo</td>
+                            <td>159.85</td>
+                            <td><i class="fas fa-edit btnedit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>js book</td>
+                            <td>Complexo</td>
+                            <td>179.85</td>
+                            <td><i class="fas fa-edit btnedit"></i></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Adobe book</td>
                             <td>Complexo</td>
                             <td>109.85</td>
                             <td><i class="fas fa-edit btnedit"></i></td>

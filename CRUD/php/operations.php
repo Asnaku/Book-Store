@@ -13,6 +13,7 @@ if (isset($_POST['create'])) {
 
 function createData()
 {
+    //$bookname = '';
     $bookname = textboxValue("book_name");
     $bookpublisher = textboxValue("book_publisher");
     $bookprice = textboxValue("book_price");
