@@ -11,6 +11,8 @@ if (isset($_POST['create'])) {
     createData();
 }
 
+
+
 function createData()
 {
     $bookname = textboxValue(value: "book_name");
@@ -50,12 +52,10 @@ function TextNode($classname, $msg)
     echo $element;
 }
 
-/*
-if (isset($_POST[$value])) {
-    $textbox = mysqli_real_escape_string($GLOBALS['con'], trim($_POST[$value]));
-    if (empty($textbox)) {
-        return false;
-    } else {
-        return $textbox;
-    }
-}*/
+//get data from MySQL db
+
+function getData(){
+    $sql = "SELECT *FROM books";
+    $result = mysqli_query($GLOBALS['con'],$sql);
+    return $result;
+}

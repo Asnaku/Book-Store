@@ -77,7 +77,7 @@ require_once("../CRUD/php/operations.php");
 
                         <?php buttonElement("btn-Update", "btn btn-light border", "<i class='fas fa-pen-alt'></i>", "update", "dat-toggle='tooltip' data-placement='bottom' title='Update'") ?>
 
-                        <?php buttonElement("btn-delete", "btn btn-danger", "<i class='fas fa-trash-alt'></i>", "delete", "dat-toggle='tooltip' data-placement='bottom' title='|Delete'") ?>
+                        <?php buttonElement("btn-delete", "btn btn-danger", "<i class='fas fa-trash-alt'></i>", "delete", "dat-toggle='tooltip' data-placement='bottom' title='Delete'") ?>
                     </div>
                 </form>
             </div>
@@ -94,41 +94,24 @@ require_once("../CRUD/php/operations.php");
                         </tr>
                     </thead>
                     <tbody id="tbody">
-                        <tr>
-                            <td>1</td>
-                            <td>php book</td>
-                            <td>Complexo</td>
-                            <td>109.85</td>
-                            <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr>
-                        <!-- <tr>
-                            <td>2</td>
-                            <td>c++ book</td>
-                            <td>Complexo</td>
-                            <td>119.85</td>
-                            <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>java book</td>
-                            <td>Complexo</td>
-                            <td>159.85</td>
-                            <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>js book</td>
-                            <td>Complexo</td>
-                            <td>179.85</td>
-                            <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Adobe book</td>
-                            <td>Complexo</td>
-                            <td>109.85</td>
-                            <td><i class="fas fa-edit btnedit"></i></td>
-                        </tr> -->
+                        <?php
+                        if (isset($_POST['read'])) {
+                            $result = getData();
+                            if ($result) {
+                                /* The mysqli_fetch_assoc () function accepts a result object as a parameter and, retrieves the contents of current row in the given result object, and returns them as an associative array. This is an identifier representing a result object. */
+                                while ($row = mysqli_fetch_assoc($result)) { ?>
+                                    <tr>
+                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['id']; ?></td>
+                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_name'];?></td>
+                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_publisher'];?></td>
+                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_price']; ?></td>
+                                        <td data-id="<?php echo $row['id'];?>"><i class="fas fa-edit btnedit"></i></td>
+                                    </tr>
+                        <?php
+                                }
+                            }
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -138,6 +121,9 @@ require_once("../CRUD/php/operations.php");
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+    <script src="../CRUD/php/main.js"></script>
 </body>
 
 </html>
