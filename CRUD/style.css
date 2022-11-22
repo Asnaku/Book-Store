@@ -12,3 +12,13 @@ table .btnedit{
     color: lightsalmon;
     cursor: pointer;
 }
+
+.Succes{
+background-color: lightgreen;
+padding: 1em;
+}
+
+.Error{
+    background-color: tomato;
+    padding: 1em;
+}

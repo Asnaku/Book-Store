@@ -24,7 +24,7 @@ require_once("../CRUD/php/operations.php");
         <div class="container text-center">
             <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
             <div class="d-flex justify-content-center">
-                <form action="" method="POST" class="w-50">
+                <form action="" method="post" class="w-50">
                     <!--
                     <div class="py-2">
                         <div class="input-group mb-3">
