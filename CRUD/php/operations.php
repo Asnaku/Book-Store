@@ -4,13 +4,21 @@ require_once("db.php");
 require_once("component.php");
 
 $con = Createdb();
-
+//$con = Createdb2();
 
 //create button click
 if (isset($_POST['create'])) {
     createData();
 }
 
+//update data
+if (isset($_POST['update'])) {
+    UpdateData();
+}
+
+if (isset($_POST['delete'])) {
+    DeleteData();
+}
 
 
 function createData()
@@ -54,8 +62,52 @@ function TextNode($classname, $msg)
 
 //get data from MySQL db
 
-function getData(){
+function getData()
+{
     $sql = "SELECT *FROM books";
-    $result = mysqli_query($GLOBALS['con'],$sql);
+    $result = mysqli_query($GLOBALS['con'], $sql);
     return $result;
+}
+
+
+function UpdateData()
+{
+    $bookid = textboxValue(value: "book_id");
+    $bookname = textboxValue(value: "book_name");
+    $bookpublisher = textboxValue(value: "book_publisher");
+    $bookprice = textboxValue(value: "book_price");
+
+
+
+    if ($bookname && $bookpublisher && $bookprice) {
+        //$sql = "UPDATE books SET book_name='$bookname', book_publisher='$bookpublisher',book_price='$bookprice' WHERE id='$bookid'";
+        $sql = "UPDATE `books` SET `book_name`='$bookname',`book_publisher`='$bookpublisher',`book_price`='$bookprice' WHERE  id='$bookid'";
+        if (mysqli_query($GLOBALS['con'], $sql)) {
+            TextNode(classname: "Succes", msg: "Data successfully updated..!");
+        } else {
+            TextNode(classname: "Error", msg: "Data not updated..");
+        }
+    } else {
+        TextNode(classname: "Error", msg: "Select Data to update");
+    }
+}
+
+
+function DeleteData()
+{
+
+    $bookid = textboxValue(value: "book_id");
+
+    if ($bookid) {
+        $sql = "DELETE FROM `books` WHERE id='$bookid'";
+        if (mysqli_query($GLOBALS['con'], $sql)) {
+            TextNode(classname: "Succes", msg: "Data successfully deleted..!");
+        } else {
+            TextNode(classname: "Error", msg: "Data not deleted..");
+        }
+    } else {
+        $sql = "DELETE FROM `books`";
+        mysqli_query($GLOBALS['con'], $sql);
+        TextNode(classname: "Error", msg: "All records deleted..!");
+    }
 }

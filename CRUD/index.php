@@ -13,7 +13,7 @@ require_once("../CRUD/php/operations.php");
     <title>Books</title>
     <script src="https://kit.fontawesome.com/f570cc1c68.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- Custom stylesheet-->
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,48 +25,27 @@ require_once("../CRUD/php/operations.php");
             <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
             <div class="d-flex justify-content-center">
                 <form action="" method="post" class="w-50">
-                    <!--
-                    <div class="py-2">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text bg-warning"><i class="fa-solid fa-id-badge"></i></span>
-                            <input type="text" autocomplete="off" placeholder="ID" class="form-control" placeholder="Username" aria-label="Username">
-                        </div>
-                    </div>
-                    <div class="pt-2">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text bg-warning"><i class="fa-solid fa-book"></i></span>
-                            <input type="text" autocomplete="off" placeholder="Book Name" class="form-control" placeholder="book_name" aria-label="Username">
-                        </div>
-                    </div> -->
-
-                    <!-- merging id and book_publisher -->
-
                     <div class="row pt-2">
                         <div class="col">
                             <div class="input-group mb-3">
-                                <span class="input-group-text bg-warning"><i class="fa-solid fa-id-badge"></i></span>
-                                <input type="text" autocomplete="off" placeholder="ID" class="form-control" placeholder="Username" aria-label="Username">
+                                <?php inputElement(icon: "<i class='fas fa-id-badge'></i>", placeholder: 'ID', name: "book_id", value: ""); ?>
                             </div>
                         </div>
                         <div class="col">
                             <div class="input-group mb-3">
-                                <span class="input-group-text bg-warning"><i class="fa-solid fa-book"></i></span>
-                                <input type="text" autocomplete="off" placeholder="Book Name" class="form-control" placeholder="book_name" name="book_name" id="book_name" aria-label="book_name">
+                                <?php inputElement(icon: "<i class='fas fa-book'></i>", placeholder: 'Book Name', name: "book_name", value: ""); ?>
                             </div>
                         </div>
                     </div>
-                    <!-- ********************** -->
                     <div class="row pt-2">
                         <div class="col">
                             <div class="input-group mb-3">
-                                <span class="input-group-text bg-warning"><i class="fas fa-people-carry"></i></span>
-                                <input type="text" name="book_publisher" id="book_publisher" autocomplete="off" placeholder="Publisher" class="form-control" placeholder="book_publisher" aria-label="book_publisher">
+                                <?php inputElement(icon: "<i class='fas fa-people-carry'></i>", placeholder: "Book Publisher", name: "book_publisher", value: ""); ?>
                             </div>
                         </div>
                         <div class="col">
                             <div class="input-group mb-3">
-                                <span class="input-group-text bg-warning"><i class="fas fa-dollar-sign"></i></span>
-                                <input type="text" autocomplete="off" placeholder="Price" class="form-control" placeholder="book_price" id="book_price" name="book_price" aria-label="book_price">
+                                <?php inputElement(icon: "<i class='fas fa-dollar-sign'></i>", placeholder: "Book Price", name: "book_price", value: ""); ?>
                             </div>
                         </div>
                     </div>
@@ -101,11 +80,11 @@ require_once("../CRUD/php/operations.php");
                                 /* The mysqli_fetch_assoc () function accepts a result object as a parameter and, retrieves the contents of current row in the given result object, and returns them as an associative array. This is an identifier representing a result object. */
                                 while ($row = mysqli_fetch_assoc($result)) { ?>
                                     <tr>
-                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['id']; ?></td>
-                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_name'];?></td>
-                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_publisher'];?></td>
-                                        <td data-id="<?php echo $row['id'];?>"><?php echo $row['book_price']; ?></td>
-                                        <td data-id="<?php echo $row['id'];?>"><i class="fas fa-edit btnedit"></i></td>
+                                        <td data-id="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></td>
+                                        <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_name']; ?></td>
+                                        <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_publisher']; ?></td>
+                                        <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_price']; ?></td>
+                                        <td><i class="fas fa-edit btnedit" data-id="<?php echo $row['id']; ?>"></i></td>
                                     </tr>
                         <?php
                                 }

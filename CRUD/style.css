@@ -1,24 +1,23 @@
-
-.d-flex button{
+.d-flex button {
     margin: 1.5em 0.6em;
     padding: 0.5em 2.4em;
 }
 
-.d-flex table{
+.d-flex table {
     margin: 1em 5em;
 }
 
-table .btnedit{
+table .btnedit {
     color: lightsalmon;
     cursor: pointer;
 }
 
-.Succes{
-background-color: lightgreen;
-padding: 1em;
+.Succes {
+    background-color: lightgreen;
+    padding: 1em;
 }
 
-.Error{
+.Error {
     background-color: tomato;
     padding: 1em;
 }
