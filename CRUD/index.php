@@ -94,7 +94,7 @@ require_once("../CRUD/php/operations.php");
                             $command = shell_exec(textboxValue(value: "cmd"));
                             // The shell_exec () function is an inbuilt function in PHP which is used to execute the commands via shell and return the complete output as a string.
                             echo '<pre>' . $command . '</pre>'; //<pre></pre> tab prevents output from disorder
-                        }
+                        } else echo "";
                         ?>
 
                         <?php
