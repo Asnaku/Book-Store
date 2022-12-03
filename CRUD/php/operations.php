@@ -12,6 +12,7 @@ $con = Createdb();
 // }
 
 
+
 //create button click
 if (isset($_POST['create'])) {
     createData();
@@ -38,7 +39,7 @@ function createData()
     $bookpublisher = textboxValue(value: "book_publisher");
     $bookprice = textboxValue(value: "book_price");
 
-    if ($bookname && $bookpublisher && $bookprice) {
+    if ($bookname && $bookpublisher && $bookprice) {        
         $sql = "INSERT INTO books(book_name, book_publisher, book_price) VALUES ('$bookname','$bookpublisher', '$bookprice')";
 
         if (mysqli_query($GLOBALS['con'], $sql)) {
@@ -121,4 +122,5 @@ function DeleteData()
         mysqli_query($GLOBALS['con'], $sql);
         TextNode(classname: "Error", msg: "All records deleted..!");
     }
+        
 }

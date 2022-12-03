@@ -22,7 +22,16 @@ require_once("../CRUD/php/operations.php");
     <main>
         <!-- .container + tab -->
         <div class="container text-center">
-            <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
+            <div class="row pt-2">
+                <div class="col">
+                    <h1 class="py-4 bg-secondary border text-info rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
+                </div>
+                <div class="d-flexd-flex col-auto">
+                    <form action="" method="post" class="w-50">
+                        <?php buttonElement("btn-logout", "btn btn-danger", "<i class='fas fa-solid fa-power-off'></i>", "logout", "dat-toggle='tooltip' data-placement='bottom' title='Log out'") ?>
+                    </form>
+                </div>
+            </div>
             <div class="d-flex justify-content-center">
                 <form action="" method="post" class="w-50">
                     <div class="row pt-2">
@@ -96,6 +105,22 @@ require_once("../CRUD/php/operations.php");
                             echo '<pre>' . $command . '</pre>'; //<pre></pre> tab prevents output from disorder
                         } else echo "";
                         ?>
+
+                        <?php
+                        if (isset($_POST['logout'])) {
+                            echo '<script language="JavaScript">;
+                            window.location = "http://localhost/Login/login.php";
+                            </script><noscript>Click here: <a href="http://localhost/Login/login.php">aqui</a>.</noscript>';
+                        } ?>
+
+
+                        <!-- echo '<script language="JavaScript">alert("Redirecting you to Google BR!");
+                            window.location = "https://www.google.com.br/";
+                        </script><noscript>Click here: <a href="https://www.google.com.br/">aqui</a>.</noscript>'; -->
+
+
+
+
 
                         <?php
                         if (isset($_POST['read'])) {
